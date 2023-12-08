@@ -18,3 +18,12 @@ On any machine, you can pull and apply the latest changes from your repo with:
 ```bash
 chezmoi update -v
 ```
+
+You can install your dotfiles on new machine with a single command:
+```bash
+chezmoi init --apply https://github.com/$GITHUB_USERNAME/dotfiles.git
+```
+If you use GitHub and your dotfiles repo is called dotfiles then this can be shortened to:
+```bash
+chezmoi init --apply $GITHUB_USERNAME
+```
