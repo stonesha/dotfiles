@@ -17,9 +17,13 @@ require("lazy").setup({
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
-      'simrat39/inlay-hints.nvim',
       'simrat39/rust-tools.nvim',
     },
+  },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
   },
     'prettier/vim-prettier',
   {
