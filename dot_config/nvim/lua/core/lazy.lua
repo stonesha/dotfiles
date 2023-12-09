@@ -16,6 +16,7 @@ require("lazy").setup({
       'simrat39/rust-tools.nvim',
     },
   },
+  { "CRAG666/code_runner.nvim", config = true },
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
