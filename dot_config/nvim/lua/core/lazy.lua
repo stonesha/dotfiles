@@ -17,6 +17,7 @@ require("lazy").setup({
     },
   },
   { "CRAG666/code_runner.nvim", config = true },
+  {"stevearc/conform.nvim", event = {"BufReadPre", "BufNewFile"}},
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },

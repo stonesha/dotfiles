@@ -41,8 +41,6 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
-  prettier = {},
-  black = {},
   jedi_language_server = {},
   rust_analyzer = {},
   html = { filetypes = { 'html', 'twig', 'hbs'} },
