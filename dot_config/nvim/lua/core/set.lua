@@ -11,7 +11,7 @@ vim.opt.wrap = false
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = "unnamedplus"
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -26,4 +26,4 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.completeopt = 'menuone,noselect'
+vim.opt.completeopt = "menuone,noselect"

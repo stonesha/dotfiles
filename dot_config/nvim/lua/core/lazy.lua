@@ -13,12 +13,11 @@ require("lazy").setup({
 
 			-- Additional lua configuration, makes nvim stuff amazing!
 			"folke/neodev.nvim",
-			"simrat39/rust-tools.nvim",
 		},
 	},
 	{ "CRAG666/code_runner.nvim", config = true },
 	{ "stevearc/conform.nvim", event = { "BufReadPre", "BufNewFile" } },
-	{ "nvim-lualine/lualine.nvim", requires = { "nvim-tree/nvim-web-devicons" } },
+	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 	{
 		"romgrk/barbar.nvim",
 		dependencies = {
@@ -33,7 +32,6 @@ require("lazy").setup({
 	{
 		"pmizio/typescript-tools.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-		opts = {},
 	},
 	"prettier/vim-prettier",
 	{
