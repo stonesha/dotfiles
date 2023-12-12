@@ -18,6 +18,7 @@ require("lazy").setup({
 	},
 	{ "CRAG666/code_runner.nvim", config = true },
 	{ "stevearc/conform.nvim", event = { "BufReadPre", "BufNewFile" } },
+	{ "nvim-lualine/lualine.nvim", requires = { "nvim-tree/nvim-web-devicons" } },
 	{
 		"romgrk/barbar.nvim",
 		dependencies = {
