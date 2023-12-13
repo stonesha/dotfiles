@@ -57,7 +57,7 @@ require("lazy").setup({
 			"hrsh7th/vim-vsnip",
 		},
 	},
-
+	"folke/trouble.nvim",
 	{ "folke/which-key.nvim", opts = {} },
 	{
 		"nvim-neo-tree/neo-tree.nvim",
