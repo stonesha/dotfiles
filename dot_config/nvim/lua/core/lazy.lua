@@ -15,7 +15,17 @@ require("lazy").setup({
 			"folke/neodev.nvim",
 		},
 	},
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {},
+	},
 	{ "CRAG666/code_runner.nvim", config = true },
+	{
+		"numToStr/Comment.nvim",
+		opts = {},
+		lazy = false,
+	},
 	{ "stevearc/conform.nvim", event = { "BufReadPre", "BufNewFile" } },
 	{ "nvim-lualine/lualine.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
 	{

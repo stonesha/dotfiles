@@ -8,3 +8,6 @@ vim.keymap.set("n", "<C-u>", "<C-d>zz")
 -- keep search term in middle of terminal
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+
+vim.keymap.set("n", "d", '"_d')
+vim.keymap.set("n", "dd", '"_dd')
