@@ -3,6 +3,11 @@ return {
   opts = {
     inlay_hints = { enabled = true },
     servers = {
+      rust_analyzer = {
+        diagnostics = {
+          enable = true,
+        },
+      },
       tsserver = {
         settings = {
           typescript = {
