@@ -1,6 +1,6 @@
 # dotfiles
 
-created using [chezmoi](https://www.chezmoi.io/)https://www.chezmoi.io/
+created using [chezmoi](https://www.chezmoi.io/)
 
 After installing chezmoi, run:
 ```bash
