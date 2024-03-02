@@ -92,8 +92,8 @@ fi
 alias la='ls -la'
 alias l='ls -CF'
 
-alias lx='eza -l -g --icons --git'
-alias lxa='eza -l -g --icons --git --all'
+alias lx='eza -l -g --icons --git --bytes'
+alias lxa='eza -l -g --icons --git --all --bytes'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -132,3 +132,18 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+#flyctl
+export FLYCTL_INSTALL="/home/stonesha/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+# yazi
+function ya() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+export -f ya
