@@ -1,0 +1,6 @@
+[manager]
+linemode = "size"
+sort_dir_first = true
+sort_by = "modified"
+show_hidden = true
+show_symlink = true
