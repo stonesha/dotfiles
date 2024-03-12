@@ -10,3 +10,6 @@ vim.keymap.set("n", "<leader>o", function()
     vim.cmd.Neotree("focus")
   end
 end, { desc = "Focus Neotree" })
+
+-- delete motions don't overwrite yank
+vim.keymap.set("n", "R", '"_d')
