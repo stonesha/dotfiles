@@ -4,3 +4,8 @@ sort_dir_first = true
 sort_by = "modified"
 show_hidden = true
 show_symlink = true
+
+[plugin]
+prepend_previewers = [
+  { name = "*.md", run = "glow" },
+]
