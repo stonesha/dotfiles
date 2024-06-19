@@ -1,0 +1,41 @@
+# pnpm
+export PNPM_HOME="/Users/ssha/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# neovim
+export NVIM_HOME="/Users/ssha/nvim/bin"
+export PATH="$NVIM_HOME:$PATH"
+
+eval "$(starship init zsh)"
+
+# some more ls aliases
+alias la='ls -la'
+alias l='ls -CF'
+
+alias lx='eza -l -g --icons --git --bytes'
+alias lxa='eza -l -g --icons --git --all --bytes'
+alias vim='nvim'
+alias lg='lazygit'
+
+# yazi
+ya() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+nvm use node v18
+
+# set default editor to nvim
+export EDITOR=nvim
