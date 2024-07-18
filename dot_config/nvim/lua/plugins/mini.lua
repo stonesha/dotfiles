@@ -11,10 +11,20 @@ return { -- Collection of various small independent plugins/modules
 
     -- Add/delete/replace surroundings (brackets, quotes, etc.)
     --
-    -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-    -- - sd'   - [S]urround [D]elete [']quotes
-    -- - sr)'  - [S]urround [R]eplace [)] [']
-    require('mini.surround').setup()
+    -- - msaiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
+    -- - msd'   - [S]urround [D]elete [']quotes
+    -- - msr)'  - [S]urround [R]eplace [)] [']
+    require('mini.surround').setup {
+      mappings = {
+        add = 'msa', -- Add surrounding in Normal and Visual modes
+        delete = 'msd', -- Delete surrounding
+        find = 'msf', -- Find surrounding (to the right)
+        find_left = 'msF', -- Find surrounding (to the left)
+        highlight = 'msh', -- Highlight surrounding
+        replace = 'msr', -- Replace surrounding
+        update_n_lines = 'msn', -- Update `n_lines`
+      },
+    }
 
     require('mini.pairs').setup()
   end,
