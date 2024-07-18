@@ -22,6 +22,23 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- fix clipboard syncing issues (i like the clipboards together sue me)
+local clip = '/mnt/c/Windows/System32/clip.exe' -- Change this path if needed
+
+if vim.fn.executable(clip) then
+  local opts = {
+    callback = function()
+      if vim.v.event.operator ~= 'y' then
+        return
+      end
+      vim.fn.system(clip, vim.fn.getreg '0')
+    end,
+  }
+
+  opts.group = vim.api.nvim_create_augroup('WSLYank', {})
+  vim.api.nvim_create_autocmd('TextYankPost', { group = opts.group, callback = opts.callback })
+end
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
