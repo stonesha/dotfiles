@@ -22,21 +22,22 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- fix clipboard syncing issues (i like the clipboards together sue me)
-local clip = '/mnt/c/Windows/System32/clip.exe' -- Change this path if needed
+-- fix wsl copy and paste issues
+local in_wsl = os.getenv 'WSL_DISTRO_NAME' ~= nil
 
-if vim.fn.executable(clip) then
-  local opts = {
-    callback = function()
-      if vim.v.event.operator ~= 'y' then
-        return
-      end
-      vim.fn.system(clip, vim.fn.getreg '0')
-    end,
+if in_wsl then
+  vim.g.clipboard = {
+    name = 'wsl clipboard',
+    copy = {
+      ['+'] = 'clip.exe',
+      ['*'] = 'clip.exe',
+    },
+    paste = {
+      ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    },
+    cache_enabled = false,
   }
-
-  opts.group = vim.api.nvim_create_augroup('WSLYank', {})
-  vim.api.nvim_create_autocmd('TextYankPost', { group = opts.group, callback = opts.callback })
 end
 
 -- [[ Install `lazy.nvim` plugin manager ]]
